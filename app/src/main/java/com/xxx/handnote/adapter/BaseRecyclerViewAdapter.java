@@ -1,4 +1,4 @@
-package com.xxx.handnote.activity.adapter;
+package com.xxx.handnote.adapter;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
