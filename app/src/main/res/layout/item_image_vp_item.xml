@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <com.xxx.handnote.utils.image.TouchImageView
+        android:id="@+id/imageViewPagerItem_image"
+        android:layout_centerInParent="true"
+        android:scaleType="fitCenter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/imageLoadView"
+        android:src="@drawable/placehold"
+        android:layout_centerInParent="true"
+        android:layout_width="@dimen/base25dp"
+        android:layout_height="@dimen/base25dp"/>
+
+    <ImageView
+        android:id="@+id/imageInfoBtn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/image_info_btn"
+        android:paddingRight="@dimen/base10dp"
+        android:paddingBottom="@dimen/base10dp"
+        android:layout_width="@dimen/base60dp"
+        android:layout_height="@dimen/base40dp"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/imageInfoLayout"
+        android:background="@color/colorBlack"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:padding="@dimen/base10dp"
+        android:layout_height="wrap_content">
+
+        <com.xxx.handnote.view.M_TextView
+            android:gravity="center"
+            android:id="@+id/imageViewPagerItem_info_1"
+            style="@style/textStyleGrayTag"
+            android:text=""
+            android:textSize="@dimen/base13dp"
+            android:textColor="@color/colorWhite"
+            />
+        <com.xxx.handnote.view.M_TextView
+            android:id="@+id/imageViewPagerItem_info_2"
+            style="@style/textStyleGrayTag"
+            android:textStyle="italic"
+            android:text=""
+            android:textSize="@dimen/base10dp"
+            android:layout_marginTop="@dimen/base3dp"
+            android:textColor="@color/colorWhiteST50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

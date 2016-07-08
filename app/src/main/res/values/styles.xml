@@ -1,0 +1,51 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!-- ********* 边界滑动关闭 ********* -->
+    <style name="SwipeBackLayout">
+        <item name="edge_size">50dip</item>
+        <item name="shadow_left">@drawable/shadow_left</item>
+        <item name="shadow_right">@drawable/shadow_right</item>
+        <item name="shadow_bottom">@drawable/shadow_bottom</item>
+    </style>
+
+    <!-- Fresco默认 -->
+    <style name="frescoImageStyle">
+        <item name="android:scaleType">centerCrop</item>
+        <item name="actualImageScaleType">focusCrop</item>
+        <!--<item name="placeholderImage">@drawable/placeholder</item>-->
+        <item name="placeholderImageScaleType">centerCrop</item>
+        <!--<item name="failureImage">@drawable/lostimage</item>-->
+        <item name="failureImageScaleType">fitCenter</item>
+        <!--<item name="roundWithOverlayColor">@color/colorWhite</item>-->
+    </style>
+
+    <!-- EditText光标 -->
+    <style name="editTextCursor">
+        <!--<item name="android:textCursorDrawable">@drawable/shape_cursor_red</item>-->
+    </style>
+
+
+    <style name="textStyleGray">
+        <item name="android:text"></item>
+        <item name="android:textSize">@dimen/base16dp</item>
+        <item name="android:textColor">@color/colorGray</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="textStyleGrayTag" parent="textStyleGray">
+        <item name="android:layout_marginLeft">@dimen/base5dp</item>
+    </style>
+
+</resources>
