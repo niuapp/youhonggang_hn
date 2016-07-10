@@ -8,6 +8,7 @@ import android.os.Looper;
 import android.text.format.Formatter;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.xxx.handnote.fragment.BaseFragment;
 import com.xxx.handnote.utils.FileUtils;
 import com.zhy.http.okhttp.OkHttpUtils;
 
@@ -19,6 +20,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -50,7 +52,10 @@ public class BaseApplication extends Application {
     //记录打开的Activity 的集合
     private static List<Activity> allActivity;
 
-
+    //主页Fragment缓存集合
+    private static HashMap<Integer, BaseFragment> mMainFragments;
+    //主页ViewPager -> Fragment缓存集合
+    private static HashMap<Integer, BaseFragment> mMainViewPagerFragments;
 
     //记录用户信息
     private static UserInfo.MyInfo userInfo;
@@ -169,7 +174,8 @@ public class BaseApplication extends Application {
 
         //初始化记录Activity的集合
         allActivity = new ArrayList<>();
-
+        mMainViewPagerFragments = new HashMap<Integer, BaseFragment>();//
+        mMainFragments = new HashMap<Integer, BaseFragment>();//主页
     }
 
     /**
@@ -179,6 +185,24 @@ public class BaseApplication extends Application {
      */
     public static List<Activity> getActivityList() {
         return allActivity;
+    }
+
+    /**
+     * 主页
+     *
+     * @return
+     */
+    public static HashMap<Integer, BaseFragment> getmMainFragments() {
+        return mMainFragments;
+    }
+
+    /**
+     * 发现页
+     *
+     * @return
+     */
+    public static HashMap<Integer, BaseFragment> getmMainViewPagerFragments() {
+        return mMainViewPagerFragments;
     }
 
     /**

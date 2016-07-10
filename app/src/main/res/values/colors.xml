@@ -15,10 +15,23 @@
 
 
     <!-- 基本色 -->
+
+    <!-- 白色 -->
     <color name="colorWhite">#fff9f9f9</color>
-    <color name="colorBlack">#ff2f2f2f</color>
-    <color name="colorRed">#ffca0f11</color>
-    <color name="colorGray">#ff787878</color>
     <color name="colorWhiteST50">#80f2f2f2</color>
+
+    <!-- 黑色 -->
+    <color name="colorBlack">#ff2f2f2f</color>
+
+    <!-- 红色 -->
+    <color name="colorRed">#ffca0f11</color>
+
+    <!-- 灰色 -->
+    <color name="colorGray">#ff787878</color>
+
+    <!-- 蓝色 -->
+    <color name="colorBlue">#ff38a4ff</color>
+
+
 
 </resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base50dp">
+
+        <ImageView
+            android:id="@+id/button_search"
+            android:layout_width="@dimen/base50dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@drawable/image_info_btn"/>
+
+        <LinearLayout
+            android:padding="@dimen/base1dp"
+            android:background="@drawable/shape_frame"
+            android:id="@+id/indicatorLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <com.xxx.handnote.view.M_TextView
+                android:id="@+id/indicator_all"
+                android:layout_width="@dimen/base60dp"
+                android:layout_height="@dimen/base30dp"
+                android:gravity="center"
+                android:text="全部"
+                android:textColor="@drawable/selector_textcolor"
+                android:background="@drawable/selector_bgcolor"
+                android:textSize="@dimen/base13dp"/>
+
+            <com.xxx.handnote.view.M_TextView
+                android:id="@+id/indicator_group"
+                android:layout_width="@dimen/base60dp"
+                android:layout_height="@dimen/base30dp"
+                android:gravity="center"
+                android:text="分组"
+                android:textColor="@drawable/selector_textcolor"
+                android:background="@drawable/selector_bgcolor"
+                android:textSize="@dimen/base13dp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:id="@+id/button_time"
+            android:layout_width="@dimen/base50dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@drawable/image_info_btn"/>
+
+    </RelativeLayout>
+
+    <View
+        android:background="@color/colorGray"
+        android:layout_width="match_parent"
+        android:layout_height="1px"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/home_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
