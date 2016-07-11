@@ -308,13 +308,13 @@ public abstract class BaseActivity extends SwipeBackActivity {
 
                         if (netInfo.getType() == ConnectivityManager.TYPE_WIFI) {
                             /////WiFi网络
-
+//                            UIUtils.showToastSafe("WiFi网络");
                         } else if (netInfo.getType() == ConnectivityManager.TYPE_ETHERNET) {
                             /////有线网络
-
+//                            UIUtils.showToastSafe("有线网络");
                         } else if (netInfo.getType() == ConnectivityManager.TYPE_MOBILE) {
                             /////////3g网络
-
+//                            UIUtils.showToastSafe("3g网络");
                         }
                     } else {
                         ////////网络断开

@@ -21,11 +21,11 @@ public class Const {
     public static final String UTF_8 = "UTF-8";
 
     // 基本url
-    public static  String BASE_URL = "http://www.baidu.com/";
+    public static  String BASE_URL = "http://sjapi.yoolon.com/api/";
 
     static {
         if (Const.testFlag){
-            BASE_URL = "http://ceshi.baidu.com/";//测试
+            BASE_URL = "http://sjapi.yoolon.com/api/";//测试
         }else {
             BASE_URL = "http://www.baidu.com/";
         }

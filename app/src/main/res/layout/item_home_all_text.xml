@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/base10dp"
+        android:paddingTop="@dimen/base10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.xxx.handnote.view.M_TextView
+            android:id="@+id/itemTime"
+            android:singleLine="true"
+            android:text="2015-3-15"
+            android:textSize="@dimen/base12dp"
+            android:textColor="@color/colorBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.xxx.handnote.view.M_TextView
+            android:id="@+id/itemText"
+            android:layout_marginTop="@dimen/base10dp"
+            android:lineSpacingMultiplier="1.3"
+            android:textSize="@dimen/base14dp"
+            android:text="大师法萨芬啥的发生的，大师法萨芬啥的发生的大师法萨芬啥的发生的，大师法萨芬啥的发生的。"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:layout_marginTop="@dimen/base10dp"
+            android:background="@color/colorGray"
+            android:layout_width="match_parent"
+            android:layout_height="1px"/>
+    </LinearLayout>
+
+
+</FrameLayout>
