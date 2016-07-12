@@ -103,7 +103,7 @@ public class ImageLoadUtils {
      */
     public static void loadImage(String url, SimpleDraweeView imageView, final Runnable runnable) {
         if (TextUtils.isEmpty(url) || imageView == null) {
-            loadImage("res://"+ "" +"/" + R.drawable.placehold, imageView, runnable);
+            loadImage("res://"+ "com.xxx.handnote" +"/" + R.drawable.placehold, imageView, runnable);
             return;
         }
 

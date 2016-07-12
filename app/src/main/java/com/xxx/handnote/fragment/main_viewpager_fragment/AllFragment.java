@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.xxx.handnote.R;
+import com.xxx.handnote.adapter.HomeAllListAdapter;
 import com.xxx.handnote.fragment.BaseFragment;
 import com.xxx.handnote.utils.UIUtils;
 
@@ -20,34 +21,10 @@ import com.xxx.handnote.utils.UIUtils;
  */
 public class AllFragment extends BaseFragment {
 
-    private String json = "{\n" +
-            "    \"code\": \"1000\",\n" +
-            "    \"msg\": \"请求成功\",\n" +
-            "    \"res\": [\n" +
-            "        {\n" +
-            "            \"id\": \"1\",\n" +
-            "            \"catname\": \"人物\",\n" +
-            "            \"pic\": \"\",\n" +
-            "            \"addtime\": \"1466845164\"\n" +
-            "        },\n" +
-            "        {\n" +
-            "            \"id\": \"3\",\n" +
-            "            \"catname\": \"动物\",\n" +
-            "            \"pic\": \"m.shouji.cc/uploads/20160626/576eaaaf31a4b.jpg\",\n" +
-            "            \"addtime\": \"1466870083\"\n" +
-            "        },\n" +
-            "        {\n" +
-            "            \"id\": \"2\",\n" +
-            "            \"catname\": \"风景\",\n" +
-            "            \"pic\": \"m.shouji.cc/uploads/20160625/576ea9cd82248.jpg\",\n" +
-            "            \"addtime\": \"1466870047\"\n" +
-            "        }\n" +
-            "    ]\n" +
-            "}";
-
     private View contentView;
 
     private RecyclerView recyclerView;
+    private HomeAllListAdapter homeAllListAdapter;
 
     @Override
     protected View initFragmentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -55,16 +32,32 @@ public class AllFragment extends BaseFragment {
         contentView = UIUtils.inflate(R.layout.fragment_all);
         recyclerView = (RecyclerView) contentView.findViewById(R.id.recyclerView);
 
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                ((LinearLayoutManager)recyclerView.getLayoutManager()).findFirstVisibleItemPosition();
-            }
-        });
+//        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+//            @Override
+//            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+//                int firstVisibleItemPosition = ((LinearLayoutManager) recyclerView.getLayoutManager()).findFirstVisibleItemPosition();
+//                try {
+//                    RecyclerView.ViewHolder viewHolderForAdapterPosition = recyclerView.findViewHolderForAdapterPosition(firstVisibleItemPosition);
+//                    if (viewHolderForAdapterPosition instanceof HomeAllListAdapter.HomeAllListViewHolder){
+//                        HomeAllListAdapter.HomeAllListViewHolder homeAllListViewHolder = (HomeAllListAdapter.HomeAllListViewHolder) viewHolderForAdapterPosition;
+//
+//                        if (homeAllListViewHolder.mDate != null){
+//                            CharSequence text = homeAllListViewHolder.mDate.getText();
+//                            if (!TextUtils.isEmpty(text)){
+//                                LogUtils.d("----------> " + text.toString().trim());
+//                            }
+//                        }
+//                    }
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//
+//            }
+//        });
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.invalidateItemDecorations();
-//        recyclerView.
+
 
 
         return contentView;
@@ -72,6 +65,10 @@ public class AllFragment extends BaseFragment {
 
     @Override
     protected void initViewData(Bundle savedInstanceState) {
+        if (homeAllListAdapter == null){
+            homeAllListAdapter = new HomeAllListAdapter();
+            recyclerView.setAdapter(homeAllListAdapter);
+        }
 
     }
 

@@ -23,6 +23,19 @@ public class HomeListBean {
         public String addtime;
         public List<String> img;
 
+        /**
+         * type 表示当前条目是什么类型
+         *      1、时间
+         *      2、文本
+         *      3、单图
+         *      4、2图
+         *      5、多图
+         */
+        public int type;
 
+        public ResEntity(int type, String addtime) {
+            this.type = type;
+            this.addtime = addtime;
+        }
     }
 }

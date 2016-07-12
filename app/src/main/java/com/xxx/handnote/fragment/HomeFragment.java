@@ -22,7 +22,7 @@ import com.xxx.handnote.view.M_TextView;
  * Project : youhonggang_hn.
  * Email : *******
  * --> 首页
- *      ViewPager一个
+ * ViewPager一个
  */
 public class HomeFragment extends BaseFragment {
     private View contentView;
@@ -45,8 +45,8 @@ public class HomeFragment extends BaseFragment {
         mTitleLayout = (RelativeLayout) contentView.findViewById(R.id.titleLayout);
         mButtonSearch = (ImageView) contentView.findViewById(R.id.button_search);
         mIndicatorLayout = (LinearLayout) contentView.findViewById(R.id.indicatorLayout);
-        mIndicatorAll = (M_TextView) contentView.findViewById(R.id.indicator_all);
-        mIndicatorGroup = (M_TextView) contentView.findViewById(R.id.indicator_group);
+        setClickEvent(mIndicatorAll = (M_TextView) contentView.findViewById(R.id.indicator_all));
+        setClickEvent(mIndicatorGroup = (M_TextView) contentView.findViewById(R.id.indicator_group));
         mButtonTime = (ImageView) contentView.findViewById(R.id.button_time);
         mHomeViewPager = (ViewPager) contentView.findViewById(R.id.home_viewPager);
 
@@ -56,19 +56,21 @@ public class HomeFragment extends BaseFragment {
     @Override
     protected void initViewData(Bundle savedInstanceState) {
 
-        if (homeViewPagerAdapter == null){
+        if (homeViewPagerAdapter == null) {
             homeViewPagerAdapter = new HomeViewPagerAdapter(getFragmentManager());
             mHomeViewPager.setAdapter(homeViewPagerAdapter);//设置适配器
 
             mHomeViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                 @Override
-                public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+                public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                }
+
                 @Override
                 public void onPageSelected(int position) {
 
                     //设置选择位置
-                    if (mIndicatorAll != null && mIndicatorGroup != null){
-                        switch (position){
+                    if (mIndicatorAll != null && mIndicatorGroup != null) {
+                        switch (position) {
                             case 0:
                                 mIndicatorAll.setSelected(true);
                                 mIndicatorGroup.setSelected(false);
@@ -81,18 +83,54 @@ public class HomeFragment extends BaseFragment {
                     }
 
                 }
+
                 @Override
-                public void onPageScrollStateChanged(int state) {}
+                public void onPageScrollStateChanged(int state) {
+                }
             });
 
             //初始化位置
             mHomeViewPager.setCurrentItem(0);
-            if (mIndicatorAll != null && mIndicatorGroup != null){
+            if (mIndicatorAll != null && mIndicatorGroup != null) {
                 mIndicatorAll.setSelected(true);
                 mIndicatorGroup.setSelected(false);
             }
         }
     }
+
+
+    /**
+     * 设置点击监听
+     * @param view
+     */
+    private void setClickEvent(View view) {
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()) {
+                    case R.id.indicator_all: //切换到 0页
+                        try {
+                            if (mHomeViewPager.getCurrentItem() == 1) {
+                                mHomeViewPager.setCurrentItem(0, true);
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    case R.id.indicator_group: //切换到 1页
+                        try {
+                            if (mHomeViewPager.getCurrentItem() == 0) {
+                                mHomeViewPager.setCurrentItem(1, true);
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                }
+            }
+        });
+    }
+
 
     /**
      * 首页ViewPager适配器

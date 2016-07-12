@@ -2,9 +2,9 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorBlue</item>
+        <item name="colorPrimaryDark">@color/colorBlue</item>
+        <item name="colorAccent">@color/colorBlue</item>
 
         <item name="android:windowIsTranslucent">true</item>
     </style>
@@ -21,11 +21,22 @@
     <style name="frescoImageStyle">
         <item name="android:scaleType">centerCrop</item>
         <item name="actualImageScaleType">focusCrop</item>
-        <!--<item name="placeholderImage">@drawable/placeholder</item>-->
+        <item name="placeholderImage">@drawable/placehold</item>
         <item name="placeholderImageScaleType">centerCrop</item>
-        <!--<item name="failureImage">@drawable/lostimage</item>-->
+        <item name="failureImage">@drawable/placehold</item>
         <item name="failureImageScaleType">fitCenter</item>
-        <!--<item name="roundWithOverlayColor">@color/colorWhite</item>-->
+        <item name="roundWithOverlayColor">@color/colorWhite</item>
+    </style>
+
+    <!-- CardView -->
+    <style name="cardViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/colorWhite</item>
+        <item name="android:layout_marginBottom">@dimen/base4dp</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="cardElevation">0.5dp</item>
+        <item name="cardCornerRadius">0dp</item>
     </style>
 
     <!-- EditText光标 -->

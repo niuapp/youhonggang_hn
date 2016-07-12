@@ -120,6 +120,12 @@ public abstract class BaseRecyclerViewAdapter extends RecyclerView.Adapter<BaseR
     protected abstract int getAdapterItemType(int position);
 
     /**
+     * 条目个数 不带头脚布局
+     * @return
+     */
+    public abstract int getAdapterItemCount();
+
+    /**
      * 在头布局设置数据时
      */
     protected void bindViewHolder_HEAD_TYPE() {
@@ -180,8 +186,6 @@ public abstract class BaseRecyclerViewAdapter extends RecyclerView.Adapter<BaseR
     public int getItemCount() {
         return getAdapterItemCount() + 2; // + 头脚布局
     }
-
-    public abstract int getAdapterItemCount();
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ViewHolder(View itemView) {

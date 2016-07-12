@@ -175,7 +175,8 @@ public class ImagePopView {
 //                        Netroid.displayImage(imageUrl, imageView, loadView, w, h);
                         Picasso.with(UIUtils.getContext())
                                 .load(imageUrl)
-                                .centerCrop()
+                                .resize(UIUtils.getMaxWidth(), UIUtils.getMaxHeight())
+                                .centerInside()
                                 .placeholder(R.drawable.placehold)
                                 .error(R.drawable.placehold)
                                 .into(imageView);
@@ -185,6 +186,7 @@ public class ImagePopView {
                 }
 
                 final View imageInfoLayout = itemView.findViewById(R.id.imageInfoLayout);
+                imageInfoLayout.setVisibility(View.VISIBLE);
                 imageInfoLayout.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -192,17 +194,24 @@ public class ImagePopView {
                     }
                 });
 
-                itemView.findViewById(R.id.imageInfoBtn).setOnClickListener(new View.OnClickListener() {
+                View showInfoButton = itemView.findViewById(R.id.imageInfoBtn);
+                showInfoButton.setVisibility(View.VISIBLE);
+                showInfoButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         imageInfoLayout.setVisibility(View.VISIBLE);//点击展示图片信息
                     }
                 });
 
-                String info1 = TextUtils.isEmpty(urlList.get(position).imageInfo1.trim()) ? "" : urlList.get(position).imageInfo1.trim();
+                String info1 = TextUtils.isEmpty(urlList.get(position).imageInfo1) ? "" : urlList.get(position).imageInfo1.trim();
                 ((TextView) itemView.findViewById(R.id.imageViewPagerItem_info_1)).setText(info1);
-                String info2 = TextUtils.isEmpty(urlList.get(position).imageInfo2.trim()) ? "" : urlList.get(position).imageInfo2.trim();
+                String info2 = TextUtils.isEmpty(urlList.get(position).imageInfo2) ? "" : urlList.get(position).imageInfo2.trim();
                 ((TextView) itemView.findViewById(R.id.imageViewPagerItem_info_2)).setText(info2);
+
+                if (TextUtils.isEmpty(info1) && TextUtils.isEmpty(info2)){//没有图片信息 就都隐藏
+                    imageInfoLayout.setVisibility(View.GONE);
+                    showInfoButton.setVisibility(View.GONE);
+                }
 
                 ViewUtils.removeSelfFromParent(itemView);
                 container.addView(itemView);

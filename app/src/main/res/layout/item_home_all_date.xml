@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <FrameLayout
+        android:background="@color/colorGrayST30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.xxx.handnote.view.M_TextView
+            android:id="@+id/date"
+            android:text=""
+            android:textSize="@dimen/base14dp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="@color/colorBlack"
+            android:padding="@dimen/base10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <View
+            android:layout_gravity="bottom"
+            android:background="@color/colorGray"
+            android:layout_width="match_parent"
+            android:layout_height="1px"/>
+
+    </FrameLayout>
+
+</FrameLayout>

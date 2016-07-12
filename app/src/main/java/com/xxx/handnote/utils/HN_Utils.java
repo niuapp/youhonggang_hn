@@ -1,5 +1,6 @@
 package com.xxx.handnote.utils;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
@@ -48,6 +49,28 @@ public class HN_Utils {
         }else {
             return 0;
         }
+    }
 
+
+    public static final int TIME_YMD = 1; //年月日
+    public static final int TIME_HM = 2; //时分
+    /**
+     * 格式化时间
+     * @param time
+     * @return
+     */
+    public static String formatDate(long time, int timeType){
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(time);
+
+        switch (timeType){
+            case TIME_YMD:
+                return new SimpleDateFormat("y年M月d日").format(calendar.getTime());
+            case TIME_HM:
+                return new SimpleDateFormat("kk:mm").format(calendar.getTime());
+        }
+
+        return "";
     }
 }

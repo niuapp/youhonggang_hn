@@ -28,6 +28,7 @@
 
     <!-- 灰色 -->
     <color name="colorGray">#ff787878</color>
+    <color name="colorGrayST30">#4c787878</color>
 
     <!-- 蓝色 -->
     <color name="colorBlue">#ff38a4ff</color>

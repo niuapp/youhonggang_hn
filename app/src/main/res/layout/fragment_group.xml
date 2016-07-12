@@ -3,7 +3,15 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:overScrollMode="never"
+        android:paddingLeft="@dimen/base5dp"
+        android:paddingRight="@dimen/base5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.xxx.handnote.view.M_TextView
         android:text="分组"
         android:textSize="@dimen/base40dp"
         android:textColor="@color/colorBlue"

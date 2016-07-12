@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        style="@style/cardViewStyle"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="3dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardElevation="@dimen/base2dp"
+        android:layout_marginLeft="@dimen/base5dp"
+        android:layout_marginRight="@dimen/base5dp"
+        android:layout_marginTop="@dimen/base10dp"
+        android:background="@color/colorWhite">
+        <LinearLayout
+            android:paddingBottom="@dimen/base10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                xmlns:fresco="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/itemImage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/base160dp"
+                style="@style/frescoImageStyle"/>
+
+            <com.xxx.handnote.view.M_TextView
+                android:id="@+id/itemName"
+                android:singleLine="true"
+                android:layout_marginLeft="@dimen/base15dp"
+                android:layout_marginRight="@dimen/base15dp"
+                android:layout_marginTop="@dimen/base15dp"
+                android:layout_gravity="center_horizontal"
+                android:ellipsize="end"
+                android:text=""
+                android:textSize="@dimen/base16dp"
+                android:textColor="@color/colorBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.xxx.handnote.view.M_TextView
+                android:id="@+id/itemCountText"
+                android:singleLine="true"
+                android:layout_marginLeft="@dimen/base15dp"
+                android:layout_marginRight="@dimen/base8dp"
+                android:layout_marginTop="@dimen/base15dp"
+                android:layout_gravity="center_horizontal"
+                android:ellipsize="end"
+                android:text=""
+                android:textSize="@dimen/base16dp"
+                android:textColor="@color/colorGray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</FrameLayout>
